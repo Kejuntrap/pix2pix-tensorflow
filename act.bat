@@ -1,1 +1,1 @@
-tf115py36/.venv/Scripts/activate.bat
+venv/tf115py36/Scripts/activate.bat
