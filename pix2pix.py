@@ -13,6 +13,20 @@ import collections
 import math
 import time
 
+"""
+gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=0.5)
+sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_options))
+
+"""
+
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+  try:
+    tf.config.experimental.set_virtual_device_configuration(gpus[0], [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=1200)])
+  except RuntimeError as e:
+    print(e)
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--input_dir", help="path to folder containing images")
 parser.add_argument("--mode", required=True, choices=["train", "test", "export"])
