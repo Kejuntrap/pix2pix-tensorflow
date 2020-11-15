@@ -31,11 +31,10 @@ python3.6.9を入れてvenvで仮想環境を構築する。
 
 概略
 ```
-python -m pip install -U pip setuptools
-python -m pip install -U jupyterlab jupyter jupyter-console jupytext spyder
-
 py -3.6 -m venv venv\tf115py36
 venv\tf115py36\Scripts\activate.bat
+python -m pip install -U pip setuptools
+python -m pip install -U jupyterlab jupyter jupyter-console jupytext spyder
 python -m pip install -U pip setuptools
 python -m pip install -U tensorflow-gpu==1.15.3 tensorflow_datasets
 ```
